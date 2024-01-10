@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:assignment_pyramid/widgets/explore.dart';
 
 class Eplore extends StatefulWidget {
@@ -12,11 +12,19 @@ class Eplore extends StatefulWidget {
 }
 
 class _EploreState extends State<Eplore> {
+  var currentIndex = 1;
   List<List<String>> bestForYou = [
     ["assets/bellyfatburner.png", "Belly fat burner"],
     ["assets/loose.png", "Loose fat"],
     ["assets/plank.png", "Plank"],
     ["assets/build.png", "Build wider"]
+  ];
+
+  List<IconData> listOfIcons = [
+    Icons.home_rounded,
+    Icons.favorite_rounded,
+    Icons.settings_rounded,
+    Icons.person_rounded,
   ];
 
   List<List<dynamic>> challenges = [
@@ -45,6 +53,7 @@ class _EploreState extends State<Eplore> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xffF7F6FA),
       body: SingleChildScrollView(
@@ -247,6 +256,72 @@ class _EploreState extends State<Eplore> {
             ),
           ],
         ),
+      ),
+      // bottomNavigationBar: Container(
+      //   margin: EdgeInsets.all(10),
+      //   height: size.width * .155,
+      //   decoration: BoxDecoration(
+      //     color: Color(0xff1b2125),
+      //     boxShadow: [
+      //       BoxShadow(
+      //         color: Colors.black.withOpacity(.15),
+      //         blurRadius: 30,
+      //         offset: Offset(0, 10),
+      //       ),
+      //     ],
+      //     borderRadius: BorderRadius.circular(50),
+      //   ),
+      //   child: Padding(
+      //       padding: const EdgeInsets.all(1.0),
+      //       child: Row(
+      //         children: [
+      //           InkWell(
+      //             onTap: () {},
+      //             splashColor: Colors.transparent,
+      //             highlightColor: Colors.transparent,
+      //             child: Column(
+      //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //               crossAxisAlignment: CrossAxisAlignment.center,
+      //               children: [],
+      //             ),
+      //           ),
+      //         ],
+      //       )),
+      // ),
+      bottomNavigationBar: GNav(
+        backgroundColor: Color(0xff1b2125),
+        rippleColor: Colors.grey[800] as Color,
+        hoverColor: Colors.grey[700] as Color,
+        haptic: true,
+        tabBorderRadius: 25,
+        tabBorder: Border.all(),
+        tabMargin: EdgeInsets.all(12),
+        curve: Curves.easeOutExpo,
+        duration: Duration(milliseconds: 100),
+        gap: 2,
+        color: Colors.white,
+        activeColor: Colors.black,
+        iconSize: 20,
+        tabBackgroundColor: Color(0xFFBBF246),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
+        tabs: [
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
+          ),
+          GButton(
+            icon: Icons.rocket,
+            text: 'Explore',
+          ),
+          GButton(
+            icon: Icons.analytics,
+            text: 'Analytics',
+          ),
+          GButton(
+            icon: Icons.person_2_rounded,
+            text: 'Profile',
+          ),
+        ],
       ),
     );
   }
