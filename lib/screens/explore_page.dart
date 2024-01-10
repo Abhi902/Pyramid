@@ -31,21 +31,21 @@ class _EploreState extends State<Eplore> {
     [
       "assets/fire.png",
       "Plank\nChallenge",
-      Color(0xFFe2f8ac),
-      Color(0xFfbbf246),
+      const Color(0xFFe2f8ac),
+      const Color(0xFfbbf246),
       Colors.black
     ],
     [
       "assets/running.png",
       "Sprint\nChallenge",
-      Color(0xff8d9092),
-      Color(0xFF192126),
+      const Color(0xff8d9092),
+      const Color(0xFF192126),
       Colors.white
     ],
     [
       "assets/bottle.png",
       "Squat\nChallenge",
-      Color(0xFFdcf7a7),
+      const Color(0xFFdcf7a7),
       Colors.white,
       Colors.black
     ],
@@ -55,7 +55,7 @@ class _EploreState extends State<Eplore> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color(0xffF7F6FA),
+      backgroundColor: const Color(0xffF7F6FA),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -79,8 +79,8 @@ class _EploreState extends State<Eplore> {
                   height: 180.h,
                   decoration: ShapeDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment(-1.00, 0.01),
-                      end: Alignment(1, -0.01),
+                      begin: const Alignment(-1.00, 0.01),
+                      end: const Alignment(1, -0.01),
                       colors: [Colors.black, Colors.black.withOpacity(0)],
                     ),
                     shape: RoundedRectangleBorder(
@@ -108,7 +108,7 @@ class _EploreState extends State<Eplore> {
                   child: Text(
                     'See more >',
                     style: TextStyle(
-                      color: Color(0xFFBBF246),
+                      color: const Color(0xFFBBF246),
                       fontSize: 14.sp,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
@@ -128,7 +128,7 @@ class _EploreState extends State<Eplore> {
                   child: Text(
                     'Best for you',
                     style: TextStyle(
-                      color: Color(0xFF192126),
+                      color: const Color(0xFF192126),
                       fontSize: 18.sp,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
@@ -173,7 +173,7 @@ class _EploreState extends State<Eplore> {
                   child: Text(
                     'Challenge',
                     style: TextStyle(
-                      color: Color(0xFF192126),
+                      color: const Color(0xFF192126),
                       fontSize: 18.sp,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
@@ -216,7 +216,7 @@ class _EploreState extends State<Eplore> {
                   child: Text(
                     'Fast Warmup',
                     style: TextStyle(
-                      color: Color(0xFF192126),
+                      color: const Color(0xFF192126),
                       fontSize: 18.sp,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
@@ -289,35 +289,34 @@ class _EploreState extends State<Eplore> {
       //       )),
       // ),
       bottomNavigationBar: GNav(
-        backgroundColor: Color(0xff1b2125),
+        backgroundColor: const Color(0xff1b2125),
         rippleColor: Colors.grey[800] as Color,
         hoverColor: Colors.grey[700] as Color,
         haptic: true,
         tabBorderRadius: 25,
-        tabBorder: Border.all(),
-        tabMargin: EdgeInsets.all(12),
+        tabMargin: const EdgeInsets.all(12),
         curve: Curves.easeOutExpo,
-        duration: Duration(milliseconds: 100),
+        duration: const Duration(milliseconds: 100),
         gap: 2,
         color: Colors.white,
         activeColor: Colors.black,
         iconSize: 20,
-        tabBackgroundColor: Color(0xFFBBF246),
+        tabBackgroundColor: const Color(0xFFBBF246),
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
         tabs: [
-          GButton(
+          const GButton(
             icon: Icons.home,
             text: 'Home',
           ),
-          GButton(
+          const GButton(
             icon: Icons.rocket,
             text: 'Explore',
           ),
-          GButton(
+          const GButton(
             icon: Icons.analytics,
             text: 'Analytics',
           ),
-          GButton(
+          const GButton(
             icon: Icons.person_2_rounded,
             text: 'Profile',
           ),
